@@ -1,11 +1,30 @@
 <main>
-  <h1 class="title">Hello from Angular !</h1>
+  <div class="container">
+    <h1 class="title">Popular Github Repos</h1>
 
-  <!-- Images (and assets) are parsed and loaded from within the public directory -->
-  <img src="/img/logo.png">
-  {{ items }}
-  <item-lists></item-lists>
+    <div class="row align-items-end bg-white border py-3 text-left my-5 rounded">
+      <div class="col-4">
+        <label for="">Keyword</label>
+        <input type="text" class="form-control" ng-value="repo" ng-model="repo" aria-label="Masukkan Keyword...">
+      </div>
+      <div class="col-4">
+        <label for="">Sort</label>
+        <select class="form-control" ng-model="sort">
+          <option ng-value="sort" ng-repeat="sort in sorts">{{sort }}</option>
+        </select>
+      </div>
+      <div class="col-2">
+        <label for="">Show</label>
+        <input type="number" class="form-control" ng-value="limit" ng-model="limit" min="1" max="100">
+      </div>
+      <div class="col-2 text-right">
+        <button class="btn sm btn-primary btn-block" ng-click="changeValue()" type="button" role="button">Filter</button>
+      </div>
+    </div>
+
+    <item-lists></item-lists>
+  </div>
 </main>
-<footer>
-  
+<footer class="mt-3 mb-5">
+  Created by Muhammad Zaid Zuhdi (12/19/2018 09:12) - <a href="//github.com/muzazu/ng-github" target="_blank" rel="nofollow noindex"><i class="fa fa-github"></i> Github</a>
 </footer>

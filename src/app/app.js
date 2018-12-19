@@ -19,8 +19,20 @@ let app = () => {
 };
 
 class AppCtrl {
-  constructor() {
-    this.items = "sadasdads";
+  constructor(gitService,$scope) {
+    // default value for models
+    $scope.repo = gitService.repo;
+    $scope.sort = gitService.sort;
+    $scope.page = gitService.page;
+    $scope.limit = gitService.limit;
+
+    // selections for options
+    $scope.sorts = gitService.sorts;
+
+    $scope.changeValue = function () {
+      gitService.updateFilters($scope.repo, $scope.limit, $scope.page, $scope.sort);     
+      $scope.$broadcast('reloadData');
+    }
   }
 }
 
