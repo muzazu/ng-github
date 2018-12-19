@@ -7,7 +7,7 @@ import gitService from './services/app.service';
 import itemLists from "./components/item-lists.component";
 
 // stylesheets
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/app.css';
 
 let app = () => {
