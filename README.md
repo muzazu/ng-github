@@ -14,7 +14,7 @@ npm start
 3. Build
 
 ```javascript
-npm build
+npm run build
 ```
 
 ## Unit Test 
