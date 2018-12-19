@@ -4,6 +4,7 @@ import angular from 'angular';
 import gitService from './services/app.service';
 
 // components
+import itemLists from "./components/item-lists.component";
 
 // stylesheets
 import 'bootstrap/dist/css/bootstrap.css';
@@ -18,18 +19,20 @@ let app = () => {
 };
 
 class AppCtrl {
-  constructor(gitService) {
-    this.url = 'https://github.com/preboot/angular-webpack';
-    this.data = gitService.data;
-    console.log(gitService.loadData('angular', 10, 1));
+  constructor() {
+    this.items = "sadasdads";
   }
 }
 
 const MODULE_NAME = 'app';
 
 angular.module(MODULE_NAME, [])
+  .controller('AppCtrl', AppCtrl)
   .directive('app', app)
   .service('gitService', gitService)
-  .controller('AppCtrl', AppCtrl);
+  .component('itemLists', {
+    template: require('./components/item-lists.html'),
+    controller: itemLists
+  });
 
 export default MODULE_NAME;
