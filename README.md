@@ -17,5 +17,8 @@ npm start
 npm build
 ```
 
-## unit test 
+## Unit Test 
 Belum ditambahkan
+
+## Special Thanks
+1. Preboot ([Github](https://github.com/preboot/angularjs-webpack))
