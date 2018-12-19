@@ -1,7 +1,13 @@
 import angular from 'angular';
-import '../style/app.css';
-import 'bootstrap/dist/css/bootstrap.css';
+
+// services
 import gitService from './services/app.service';
+
+// components
+
+// stylesheets
+import 'bootstrap/dist/css/bootstrap.css';
+import '../style/app.css';
 
 let app = () => {
   return {
@@ -15,17 +21,15 @@ class AppCtrl {
   constructor(gitService) {
     this.url = 'https://github.com/preboot/angular-webpack';
     this.data = gitService.data;
-    console.log(this.data);
+    console.log(gitService.loadData('angular', 10, 1));
   }
 }
-
-AppCtrl.$inject = ['gitService'];
 
 const MODULE_NAME = 'app';
 
 angular.module(MODULE_NAME, [])
   .directive('app', app)
-  .service('gitService', ['$http',gitService])
+  .service('gitService', gitService)
   .controller('AppCtrl', AppCtrl);
 
 export default MODULE_NAME;
