@@ -6,7 +6,7 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-
+var path = require('path');
 /**
  * Env
  * Get npm lifecycle event to identify the environment
@@ -23,6 +23,12 @@ module.exports = function makeWebpackConfig() {
    */
   var config = {};
 
+  config.resolve = { 
+    alias : {
+      'Services': path.resolve(__dirname, 'src/app/services/'),
+      'Components': path.resolve(__dirname, 'src/app/components/'),
+    }
+  },
   /**
    * Entry
    * Reference: http://webpack.github.io/docs/configuration.html#entry

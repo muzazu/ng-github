@@ -1,0 +1,12 @@
+<div class="card text-dark border">
+    <div class="card-body text-justify">
+        <img class="card-img-top" ng-src="{{ $ctrl.item.owner.avatar_url }}" alt="Card image cap">
+        <h5 class="card-title pt-4 text-capitalize font-weight-bold text-center">{{ $ctrl.item.name }}</h5>
+        <p class="card-text">{{ $ctrl.item.description }}</p>
+    </div>
+    <ul class="list-group list-group-flush text-justify">
+        <li class="list-group-item"><i class="fa fa-star text-warning"></i> {{ $ctrl.item.stargazers_count }}</li>
+        <li class="list-group-item"><i class="fa fa-user"></i> {{ $ctrl.item.owner.login }}</li>
+        <li class="list-group-item text-center"><a ng-href="{{ $ctrl.item.url }}" class="btn btn-sm btn-primary" target="_blank"><i class="fa fa-github"></i> Github</a></li>
+    </ul>
+</div>

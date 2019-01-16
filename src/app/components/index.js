@@ -1,0 +1,1 @@
+export {default as itemLists} from './item-lists/item-lists.component';
