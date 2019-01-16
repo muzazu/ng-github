@@ -14,7 +14,7 @@ import '../style/app.css';
 let app = () => {
   return {
     template: require('./app.html'),
-    controller: 'AppCtrl',
+    controller: AppCtrl,
     controllerAs: 'app'
   }
 };
@@ -51,11 +51,10 @@ class AppCtrl {
   }
 }
 
-const module_name = 'app';
-angular.module(module_name, [])
+angular.module('app', [])
   .controller('AppCtrl', AppCtrl)
   .directive('app', app)
-  .service('gitService', gitService)
+  .service('gitService', ['$http', gitService])
   .component('itemLists', itemLists);
 
-export default module_name;
+export default 'app';

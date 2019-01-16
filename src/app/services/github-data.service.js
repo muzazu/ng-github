@@ -28,5 +28,4 @@ class githubData {
     }
 }
 
-githubData.$inject = ['$http'];
 export default githubData;
